@@ -1,0 +1,20 @@
+title: Root Kullanicisiyla Dogrudan SSH Girisi
+id: lnx-root-login-102
+description: >
+  Root ile dogrudan SSH girisi cogu kurumda politika ihlalidir ve saldirgan
+  erisiminin ilk gostergesi olabilir.
+level: medium
+author: LogHunter
+logsource:
+  product: linux
+  service: auth
+detection:
+  selection:
+    event_type: ssh_successful_login
+    user: root
+  condition: selection
+tags:
+  - attack.t1078
+  - attack.initial-access
+falsepositives:
+  - Root girisine izin veren eski sunucular

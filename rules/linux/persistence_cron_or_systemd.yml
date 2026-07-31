@@ -1,0 +1,31 @@
+title: Cron veya systemd Uzerinden Kalicilik Denemesi
+id: lnx-persistence-104
+description: >
+  Saldirganlar erisimi kalici hale getirmek icin crontab girdisi ekler veya
+  yeni bir systemd servisi yazar.
+level: medium
+author: LogHunter
+logsource:
+  product: linux
+detection:
+  cron:
+    _raw|contains:
+      - 'crontab -'
+      - '/etc/cron.d/'
+      - '/var/spool/cron/'
+  systemd:
+    _raw|contains:
+      - 'systemctl enable'
+      - '/etc/systemd/system/'
+  suspicious:
+    _raw|contains:
+      - /tmp/
+      - /dev/shm/
+      - base64
+      - nc -e
+      - bash -i
+  condition: (cron or systemd) and suspicious
+tags:
+  - attack.t1053.003
+  - attack.t1543.002
+  - attack.persistence

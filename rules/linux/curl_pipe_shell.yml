@@ -1,0 +1,17 @@
+title: Internetten Indirilen Scriptin Dogrudan Calistirilmasi
+id: lnx-curl-pipe-103
+description: >
+  'curl ... | bash' kaliba, kripto madencisi ve botnet bulasmalarinda en sik
+  gorulen ilk asama komutudur.
+level: critical
+author: LogHunter
+logsource:
+  product: linux
+detection:
+  keywords:
+    _raw|re: '(curl|wget)[^|;]{0,200}\|\s*(sudo\s+)?(ba)?sh'
+  condition: keywords
+tags:
+  - attack.t1059.004
+  - attack.t1105
+  - attack.execution
