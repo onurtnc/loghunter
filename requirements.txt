@@ -1,0 +1,4 @@
+# LogHunter cekirdek calismasi icin harici bagimlilik GEREKMEZ (Python 3.8+ stdlib).
+# Asagidakiler opsiyoneldir:
+PyYAML>=6.0      # kuruluysa dahili mini-YAML parser yerine kullanilir
+pytest>=7.0      # testleri calistirmak icin
