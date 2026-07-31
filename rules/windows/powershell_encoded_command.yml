@@ -1,0 +1,31 @@
+title: Kodlanmis PowerShell Komutu (EncodedCommand)
+id: win-ps-encoded-001
+description: >
+  Base64 ile kodlanmis PowerShell komutlari saldirganlarin tespitten kacinmak icin
+  siklikla kullandigi bir tekniktir. Mesru yonetim scriptleri de kullanabilir,
+  komut icerigini mutlaka cozup inceleyin.
+level: high
+author: LogHunter
+logsource:
+  product: windows
+  service: sysmon
+detection:
+  selection:
+    EventID: 1
+    Image|endswith:
+      - \powershell.exe
+      - \pwsh.exe
+  cmd:
+    CommandLine|contains:
+      - ' -enc '
+      - ' -EncodedCommand'
+      - ' -ec '
+      - FromBase64String
+  condition: selection and cmd
+tags:
+  - attack.t1059.001
+  - attack.defense-evasion
+falsepositives:
+  - Kurumsal dagitim araclarinin (SCCM, Intune) kodlanmis scriptleri
+references:
+  - https://attack.mitre.org/techniques/T1059/001/

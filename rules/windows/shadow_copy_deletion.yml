@@ -1,0 +1,25 @@
+title: Golge Kopya Silme (Fidye Yazilimi Belirtisi)
+id: win-shadow-006
+description: >
+  vssadmin/wmic ile golge kopyalarin silinmesi, fidye yazilimlarinin sifreleme
+  oncesi yaptigi en tipik hazirlik adimidir. Neredeyse her zaman kotu niyetlidir.
+level: critical
+author: LogHunter
+logsource:
+  product: windows
+  service: sysmon
+detection:
+  selection:
+    EventID: 1
+  vssadmin:
+    CommandLine|contains|all:
+      - shadow
+      - delete
+  wbadmin:
+    CommandLine|contains:
+      - 'wbadmin delete catalog'
+      - 'bcdedit /set {default} recoveryenabled no'
+  condition: selection and (vssadmin or wbadmin)
+tags:
+  - attack.t1490
+  - attack.impact

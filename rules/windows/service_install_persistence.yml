@@ -1,0 +1,28 @@
+title: Supheli Servis Kurulumu (Kalicilik)
+id: win-svc-004
+description: >
+  7045 olayi yeni bir Windows servisi kuruldugunu gosterir. PsExec, Cobalt Strike
+  ve fidye yazilimlari yayilim icin gecici servisler olusturur.
+level: high
+author: LogHunter
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID:
+      - 7045
+      - 4697
+  suspicious:
+    ServiceFileName|contains:
+      - powershell
+      - cmd.exe /c
+      - \Users\
+      - \Temp\
+      - \PSEXESVC
+      - -enc
+  condition: selection and suspicious
+tags:
+  - attack.t1543.003
+  - attack.persistence
+  - attack.lateral-movement

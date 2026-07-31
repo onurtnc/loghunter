@@ -1,0 +1,33 @@
+title: LOLBin Uzerinden Dosya Indirme
+id: win-lolbin-002
+description: >
+  certutil, bitsadmin, mshta ve regsvr32 gibi isletim sistemiyle gelen ikili
+  dosyalar uzaktan payload indirmek icin kotuye kullanilir.
+level: high
+author: LogHunter
+logsource:
+  product: windows
+  service: sysmon
+detection:
+  selection:
+    EventID: 1
+    Image|endswith:
+      - \certutil.exe
+      - \bitsadmin.exe
+      - \mshta.exe
+      - \regsvr32.exe
+      - \curl.exe
+  download:
+    CommandLine|contains:
+      - urlcache
+      - /transfer
+      - http://
+      - https://
+      - scrobj.dll
+  condition: selection and download
+tags:
+  - attack.t1105
+  - attack.t1218
+  - attack.command-and-control
+falsepositives:
+  - certutil ile mesru sertifika indirme islemleri

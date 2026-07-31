@@ -1,0 +1,25 @@
+title: Windows Oturum Acma Kaba Kuvvet Saldirisi
+id: win-bruteforce-005
+description: >
+  Kisa surede ayni kaynak IP'den cok sayida basarisiz oturum acma denemesi
+  (4625) parola deneme saldirisina isaret eder.
+level: high
+author: LogHunter
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4625
+  timeframe_config:
+    count: 5
+    window_minutes: 5
+    group_by:
+      - IpAddress
+      - TargetUserName
+  condition: selection
+tags:
+  - attack.t1110
+  - attack.credential-access
+falsepositives:
+  - Parolasi degisen servis hesaplari
